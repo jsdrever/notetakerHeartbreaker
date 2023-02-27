@@ -1,1 +1,29 @@
 # notetakerHeartbreaker
+This application called Note Taker can be used to write and save notes. This application will use an Express.js back end and will save and retrieve note data from a JSON file.
+
+
+
+
+
+
+
+
+
+
+
+
+example of how the package.json should look
+{
+  "name": "note-taker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
