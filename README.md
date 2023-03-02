@@ -3,6 +3,10 @@ This application called Note Taker can be used to write and save notes. This app
 
 
 
+package.json didnt install with npm i
+
+
+
 
 
 
