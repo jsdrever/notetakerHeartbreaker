@@ -4,6 +4,14 @@ let saveNoteBtn;
 let newNoteBtn;
 let noteList;
 
+const fs = require('fs');
+const express = require('express');
+
+const app = express();
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 if (window.location.pathname === '/notes') {
   noteTitle = document.querySelector('.note-title');
   noteText = document.querySelector('.note-textarea');
