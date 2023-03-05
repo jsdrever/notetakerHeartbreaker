@@ -1,15 +1,15 @@
 
-const notes = require('express').Router();
+const notesRoute = require('express').Router();
 const { readFromFile, readAndAppend } = require('../helpers/fsUtils');
 
 
-// GET Route for retrieving all the tips
+// GET Route for retrieving all the notes
 notesRoute.get('/', (req, res) => {
   console.info(`${req.method} note has been received`);
-  readFromFile('./notes.html.json').then((data) => res.json(JSON.parse(data)));
+  readFromFile('./develop/db.json').then((data) => res.json(JSON.parse(data)));
 });
 
-// POST Route for a new UX/UI tip
+// POST Route for a new UX/UI note
 notesRoute.post('/', (req, res) => {
   console.info(`${req.method} request received to add a note`);
   console.log(req.body);
@@ -20,15 +20,14 @@ notesRoute.post('/', (req, res) => {
     const newNote = {
      title,
      text,
-     uuid,
     };
 
-    readAndAppend(newNote, './notes.html.json');
+    readAndAppend(newNote, './develop/db.json');
     res.json(`Note added successfully 🚀`);
   } else {
     res.error('Error in adding note');
   }
 });
 
-module.exports = notes;
+module.exports = notesRoute;
 //! sort the names and callbacks
