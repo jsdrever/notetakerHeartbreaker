@@ -3,31 +3,12 @@ This application called Note Taker can be used to write and save notes. This app
 
 
 
-package.json didnt install with npm i
+git hub link
+https://github.com/jsdrever/notetakerHeartbreaker.git
 
 
+deploy link
+https://jsdrever.github.io/notetakerHeartbreaker/
 
 
-
-
-
-
-
-
-
-
-example of how the package.json should look
-{
-  "name": "note-taker",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.16.4"
-  }
-}
+picture
