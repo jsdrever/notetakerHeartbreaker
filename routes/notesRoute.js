@@ -1,35 +1,34 @@
-const 
-const tips = require('express').Router();
+
+const notes = require('express').Router();
 const { readFromFile, readAndAppend } = require('../helpers/fsUtils');
-const uuid = require('../helpers/uuid');
+
 
 // GET Route for retrieving all the tips
-tips.get('/', (req, res) => {
-  console.info(`${req.method} request received for tips`);
-  readFromFile('./db/tips.json').then((data) => res.json(JSON.parse(data)));
+notesRoute.get('/', (req, res) => {
+  console.info(`${req.method} note has been received`);
+  readFromFile('./notes.html.json').then((data) => res.json(JSON.parse(data)));
 });
 
 // POST Route for a new UX/UI tip
-tips.post('/', (req, res) => {
-  console.info(`${req.method} request received to add a tip`);
+notesRoute.post('/', (req, res) => {
+  console.info(`${req.method} request received to add a note`);
   console.log(req.body);
 
-  const { username, topic, tip } = req.body;
+  const { title, text } = req.body;
 
   if (req.body) {
-    const newTip = {
-      username,
-      tip,
-      topic,
-      tip_id: uuid(),
+    const newNote = {
+     title,
+     text,
+     uuid,
     };
 
-    readAndAppend(newTip, './db/tips.json');
-    res.json(`Tip added successfully 🚀`);
+    readAndAppend(newNote, './notes.html.json');
+    res.json(`Note added successfully 🚀`);
   } else {
-    res.error('Error in adding tip');
+    res.error('Error in adding note');
   }
 });
 
-module.exports = tips;
+module.exports = notes;
 //! sort the names and callbacks
